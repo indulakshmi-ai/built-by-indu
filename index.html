@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indulakshmi Subramaniam — Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Söhne:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18;
+    --ink-mid: #4a4a45;
+    --ink-light: #8a8a82;
+    --paper: #f7f5f0;
+    --paper-warm: #eeebe3;
+    --accent: #2d4a3e;
+    --accent-light: #4a7c66;
+    --rule: #d8d4c8;
+    --mono: 'DM Mono', monospace;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(247,245,240,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--ink-mid);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 3rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    top: 50%;
+    left: -0.02em;
+    transform: translateY(-50%);
+    font-family: var(--serif);
+    font-size: clamp(120px, 18vw, 220px);
+    font-weight: 300;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--rule);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(48px, 7vw, 88px);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    color: var(--ink-mid);
+    max-width: 560px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .hero-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 28px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-light);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink-mid);
+    padding: 12px 0;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .btn-ghost:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .hero-stats {
+    position: absolute;
+    right: 3rem;
+    bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: right;
+    z-index: 2;
+  }
+
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--accent);
+  }
+
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-top: 4px;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 6rem 3rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .section-num {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--ink-light);
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text {
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    font-weight: 300;
+  }
+
+  .about-text strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .about-text p + p {
+    margin-top: 1.25rem;
+  }
+
+  .about-principles {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .principle {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .principle:first-child {
+    border-top: 1px solid var(--rule);
+  }
+
+  .principle-num {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .principle-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 0.4rem;
+  }
+
+  .principle-desc {
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.6;
+  }
+
+  /* EXPERIENCE */
+  .exp-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .exp-item:first-child {
+    border-top: 1px solid var(--rule);
+  }
+
+  .exp-meta {}
+
+  .exp-period {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .exp-company {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+  }
+
+  .exp-tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    background: var(--paper-warm);
+    color: var(--accent);
+    border: 1px solid var(--rule);
+    margin-top: 0.5rem;
+  }
+
+  .exp-content {}
+
+  .exp-role {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .exp-bullets li {
+    font-size: 14px;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    padding-left: 1.25rem;
+    position: relative;
+    font-weight: 300;
+  }
+
+  .exp-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 10px;
+    top: 3px;
+  }
+
+  .exp-highlight {
+    display: inline-block;
+    background: var(--paper-warm);
+    border-left: 2px solid var(--accent);
+    padding: 0.6rem 1rem;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    margin-top: 1rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .project-card {
+    background: var(--paper);
+    padding: 2.5rem;
+    transition: background 0.2s;
+    cursor: default;
+  }
+
+  .project-card:hover {
+    background: var(--paper-warm);
+  }
+
+  .project-type {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .project-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  .project-desc {
+    font-size: 13px;
+    color: var(--ink-mid);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-metrics {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .metric {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .metric-val {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .metric-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-top: 3px;
+  }
+
+  .project-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+  }
+
+  .ptag {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px solid var(--rule);
+    color: var(--ink-light);
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .skill-group-title {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .skill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .skill-list li {
+    font-size: 14px;
+    color: var(--ink-mid);
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .skill-list li::before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 1px;
+    background: var(--rule);
+    flex-shrink: 0;
+  }
+
+  /* EDUCATION */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .edu-card {
+    background: var(--paper);
+    padding: 2rem 2.5rem;
+  }
+
+  .edu-degree {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+  }
+
+  .edu-school {
+    font-size: 13px;
+    color: var(--ink-mid);
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+  }
+
+  .edu-field {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--ink-light);
+    text-transform: uppercase;
+  }
+
+  /* CONTACT */
+  .contact-section {
+    background: var(--accent);
+    border-top: none;
+  }
+
+  .contact-section .section-title {
+    color: #fff;
+  }
+
+  .contact-section .section-num {
+    color: rgba(255,255,255,0.4);
+  }
+
+  .contact-section .section-rule {
+    background: rgba(255,255,255,0.15);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .contact-text {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  .contact-text em {
+    font-style: italic;
+    opacity: 0.7;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    transition: background 0.2s;
+  }
+
+  .contact-link:hover {
+    background: rgba(255,255,255,0.14);
+  }
+
+  .contact-link-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  .contact-link-val {
+    font-weight: 300;
+  }
+
+  .contact-link-arrow {
+    opacity: 0.4;
+    font-size: 12px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 1.5rem 3rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-text {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 0 1.5rem 3rem; }
+    .hero-stats { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .about-grid, .exp-item, .contact-grid, .edu-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .projects-grid, .skills-grid { grid-template-columns: 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Indulakshmi S.</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="border-top: none; padding-top: 0;">
+  <div class="hero-bg-text">Product</div>
+  <div class="hero-content fade-up">
+    <div class="hero-eyebrow">Product Manager · San Jose, CA</div>
+    <h1 class="hero-name">Indulakshmi<br><em>Subramaniam</em></h1>
+    <p class="hero-desc">
+      Building products at the intersection of healthcare, cloud, and human behavior. 5+ years turning clinician insights and user research into strategies that scale globally.
+    </p>
+    <div class="hero-links">
+      <a href="#projects" class="btn-primary">View Work →</a>
+      <a href="mailto:indulakshmisubramaniam@gmail.com" class="btn-ghost">Get in touch ↗</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="stat-num">1K+</div>
+      <div class="stat-label">Platform users</div>
+    </div>
+    <div>
+      <div class="stat-num">15+</div>
+      <div class="stat-label">Countries</div>
+    </div>
+    <div>
+      <div class="stat-num">5×</div>
+      <div class="stat-label">Cost reduction</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header fade-up">
+    <span class="section-num">01</span>
+    <h2 class="section-title">About</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text fade-up">
+      <p>I'm a product manager with a background in biomedical engineering — which means I approach every product problem by asking <strong>what does the user actually need to do, and why aren't they able to do it today?</strong></p>
+      <p>At Medis Medical Imaging, I've worked across the full PM spectrum: from building a 0→1 global learning platform to driving early US market development for a cardiology imaging tool. My work sits at the crossroads of clinical workflows, enterprise stakeholders, and software delivery.</p>
+      <p>I believe the best products are built through relentless discovery, honest metrics, and tight collaboration between design, engineering, and the people using the product every day.</p>
+    </div>
+    <div class="about-principles fade-up">
+      <div class="principle">
+        <div class="principle-num">Principle 01</div>
+        <div class="principle-title">Start with the user's job</div>
+        <div class="principle-desc">Features don't create value — outcomes do. I anchor every decision in what the user is trying to accomplish, not what's technically possible.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">Principle 02</div>
+        <div class="principle-title">Measure what matters</div>
+        <div class="principle-desc">Adoption metrics, onboarding efficiency, lead generation — I define success criteria before writing a single spec.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">Principle 03</div>
+        <div class="principle-title">Build for scale from day one</div>
+        <div class="principle-desc">Whether it's 10 users or 10,000, the architecture of a product — technical and organizational — determines how far it can grow.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">Principle 04</div>
+        <div class="principle-title">Influence without authority</div>
+        <div class="principle-desc">Cross-functional alignment is a product skill. I build trust with engineers, clinicians, and C-suite stakeholders by understanding their language.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header fade-up">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="exp-list">
+
+    <div class="exp-item fade-up">
+      <div class="exp-meta">
+        <div class="exp-period">Oct 2025 — Present</div>
+        <div class="exp-company">Medis Medical Imaging</div>
+        <div class="exp-tag">Interventional Cardiology</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Product Manager,<br>Interventional Cardiology (US)</div>
+        <ul class="exp-bullets">
+          <li>Driving early US QFR market development through competitor landscape analysis, pilot feedback, and clinician discovery to influence roadmap prioritization</li>
+          <li>Partnering with enterprise stakeholders — GE HealthCare, Terumo — aligning clinical, operational, and technical requirements with internal teams for commercial launch</li>
+          <li>Planning scalable KOL engagement and onboarding frameworks to accelerate adoption at launch</li>
+        </ul>
+        <div class="exp-highlight">Shaping go-to-market strategy for a cardiology imaging product entering the US market</div>
+      </div>
+    </div>
+
+    <div class="exp-item fade-up">
+      <div class="exp-meta">
+        <div class="exp-period">Jan 2024 — Sep 2025</div>
+        <div class="exp-company">Medis Medical Imaging</div>
+        <div class="exp-tag">Cloud / LMS</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Knowledge Platform<br>Product Manager</div>
+        <ul class="exp-bullets">
+          <li>Built and launched a 0→1 global learning platform in 6 months — scaled to 1,000+ users across 15+ countries</li>
+          <li>Defined platform strategy, roadmap, and commercialization; prioritized features using adoption metrics and user analytics</li>
+          <li>Architected an AWS-based pre-sales enablement tool that generated 100+ leads</li>
+          <li>Launched AI/LLM-powered employee onboarding, reducing org-wide ramp time</li>
+        </ul>
+        <div class="exp-highlight">0→1 platform · 1,000+ users · 15+ countries · 100+ leads generated</div>
+      </div>
+    </div>
+
+    <div class="exp-item fade-up">
+      <div class="exp-meta">
+        <div class="exp-period">Sep 2021 — Dec 2023</div>
+        <div class="exp-company">Medis Medical Imaging</div>
+        <div class="exp-tag">Clinical Imaging</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Product Support Specialist,<br>Interventional Imaging</div>
+        <ul class="exp-bullets">
+          <li>Supported global rollout across 30+ hospitals in 15+ countries; trained 100+ clinicians and reduced onboarding time</li>
+          <li>Conducted workflow discovery and usability testing, translating insights into requirements adopted in software releases</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item fade-up">
+      <div class="exp-meta">
+        <div class="exp-period">May 2018 — Jun 2019</div>
+        <div class="exp-company">IIT Madras</div>
+        <div class="exp-tag">Hardware / R&D</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Product Lead,<br>Assistive Devices</div>
+        <ul class="exp-bullets">
+          <li>Led end-to-end delivery of two assistive devices; secured product funding from Sony</li>
+          <li>Reduced cost of care 5× vs. competitors through design and manufacturing optimization</li>
+        </ul>
+        <div class="exp-highlight">5× cost reduction · Sony-funded</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header fade-up">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="projects-grid">
+
+    <div class="project-card fade-up">
+      <div class="project-type">0→1 Launch · Cloud / LMS</div>
+      <div class="project-title">Global Knowledge Platform</div>
+      <p class="project-desc">Built a learning management system from scratch — no existing product, no existing team process. Went from concept to 1,000+ active users across 15 countries in 6 months. Defined the strategy, roadmap, and commercialization model end-to-end.</p>
+      <div class="project-metrics">
+        <div class="metric">
+          <div class="metric-val">1,000+</div>
+          <div class="metric-label">Active users</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">15+</div>
+          <div class="metric-label">Countries</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">6 mo</div>
+          <div class="metric-label">Time to launch</div>
+        </div>
+      </div>
+      <div class="project-tags">
+        <span class="ptag">AWS</span>
+        <span class="ptag">Roadmapping</span>
+        <span class="ptag">0→1</span>
+        <span class="ptag">Analytics</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-up">
+      <div class="project-type">Pre-sales · Cloud Infrastructure</div>
+      <div class="project-title">AWS Pre-Sales Enablement Tool</div>
+      <p class="project-desc">Architected an internal tool on AWS that gave the sales team a structured, product-led way to engage prospects. Bridged a gap between engineering capability and commercial use — generating measurable pipeline from a tool that hadn't existed before.</p>
+      <div class="project-metrics">
+        <div class="metric">
+          <div class="metric-val">100+</div>
+          <div class="metric-label">Leads generated</div>
+        </div>
+      </div>
+      <div class="project-tags">
+        <span class="ptag">AWS</span>
+        <span class="ptag">GTM</span>
+        <span class="ptag">Sales enablement</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-up">
+      <div class="project-type">AI/LLM · Internal Product</div>
+      <div class="project-title">AI-Powered Employee Onboarding</div>
+      <p class="project-desc">Launched an LLM-powered onboarding experience for new employees, replacing a fragmented mix of documents and meetings. Reduced ramp time organization-wide and created a foundation for scalable knowledge transfer as the company grows.</p>
+      <div class="project-metrics">
+        <div class="metric">
+          <div class="metric-val">↓</div>
+          <div class="metric-label">Ramp time</div>
+        </div>
+      </div>
+      <div class="project-tags">
+        <span class="ptag">AI / LLM</span>
+        <span class="ptag">Internal tooling</span>
+        <span class="ptag">Onboarding</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-up">
+      <div class="project-type">Hardware · Social Impact</div>
+      <div class="project-title">Assistive Devices — IIT Madras</div>
+      <p class="project-desc">Led product development of two assistive devices at IIT Madras, from concept through manufacturing. Secured Sony funding by building a compelling product case. Achieved a 5× cost reduction vs. market alternatives through materials and process optimization.</p>
+      <div class="project-metrics">
+        <div class="metric">
+          <div class="metric-val">5×</div>
+          <div class="metric-label">Cost reduction</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">2</div>
+          <div class="metric-label">Devices shipped</div>
+        </div>
+      </div>
+      <div class="project-tags">
+        <span class="ptag">Hardware</span>
+        <span class="ptag">Sony-funded</span>
+        <span class="ptag">End-to-end</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header fade-up">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Skills</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="fade-up">
+      <div class="skill-group-title">Product Strategy</div>
+      <ul class="skill-list">
+        <li>0→1 Product Launches</li>
+        <li>Roadmapping & Prioritization</li>
+        <li>Market Development</li>
+        <li>Competitor Analysis</li>
+        <li>GTM Strategy</li>
+      </ul>
+    </div>
+    <div class="fade-up">
+      <div class="skill-group-title">Discovery & Research</div>
+      <ul class="skill-list">
+        <li>Customer Discovery</li>
+        <li>Usability Testing</li>
+        <li>Clinician Interviews</li>
+        <li>Feedback Loop Design</li>
+        <li>Analytics & Metrics</li>
+      </ul>
+    </div>
+    <div class="fade-up">
+      <div class="skill-group-title">Execution & Delivery</div>
+      <ul class="skill-list">
+        <li>Cross-functional Leadership</li>
+        <li>Stakeholder Influence</li>
+        <li>AWS Cloud Infrastructure</li>
+        <li>AI / LLM Integration</li>
+        <li>Enterprise Adoption</li>
+      </ul>
+    </div>
+  </div>
+  <div class="edu-grid" style="margin-top: 3rem;">
+    <div class="edu-card fade-up">
+      <div class="edu-field">Master's Degree</div>
+      <div class="edu-degree">M.Sc. Biomedical Engineering</div>
+      <div class="edu-school">TU Delft</div>
+    </div>
+    <div class="edu-card fade-up">
+      <div class="edu-field">Bachelor's Degree</div>
+      <div class="edu-degree">B.E. Electronics & Communication</div>
+      <div class="edu-school">SSN College of Engineering, Anna University</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="section-header fade-up">
+    <span class="section-num" style="color:rgba(255,255,255,0.4)">05</span>
+    <h2 class="section-title" style="color:#fff">Contact</h2>
+    <div class="section-rule" style="background:rgba(255,255,255,0.15)"></div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-text fade-up">
+      Open to senior PM roles in <em>healthcare, cloud, or enterprise software.</em> Let's talk.
+    </div>
+    <div class="contact-links fade-up">
+      <a href="mailto:indulakshmisubramaniam@gmail.com" class="contact-link">
+        <div>
+          <div class="contact-link-label">Email</div>
+          <div class="contact-link-val">indulakshmisubramaniam@gmail.com</div>
+        </div>
+        <span class="contact-link-arrow">↗</span>
+      </a>
+      <a href="https://linkedin.com/in/indulakshmi" target="_blank" class="contact-link">
+        <div>
+          <div class="contact-link-label">LinkedIn</div>
+          <div class="contact-link-val">linkedin.com/in/indulakshmi</div>
+        </div>
+        <span class="contact-link-arrow">↗</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-text">Indulakshmi Subramaniam · Product Manager · San Jose, CA</span>
+  <span class="footer-text">Built for GitHub Pages</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
